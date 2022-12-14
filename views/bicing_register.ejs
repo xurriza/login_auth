@@ -1,0 +1,50 @@
+<!-- SINTAXIS HTML  -->
+<!-- <nombre_etiqueta atributo="valor">CONTENIDO</nombre_etiqueta> -->
+<!-- etiqueta que dice al navegador que es un doc. HTML -->
+<!DOCTYPE html>
+<!-- etiqueta contenedora de todos los elementos HTML -->
+<html lang="es">
+<!-- head: contiene los elementos de config. de la pag. web -->
+
+<head>
+    <!-- codifica los caracteres especiales -->
+    <meta charset="UTF-8">
+    <!-- compatibilidad con IE EDGE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- para que sea correcta la visualizacion en Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- titulo de la pag web  -->
+    <title>Registro</title>
+    <!-- link a css  -->
+    <link rel="stylesheet" href="css/bicing_main.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script type="module" src="js/bicing_register.js"></script>
+</head>
+
+<body>
+    <!-- CABECERA -->
+    <!-- dentro de la etiqueta body, añadimos los elementos visuales de nuestra pag web -->
+    <%- include('partials/header') %>
+    <main>
+        <form class="register">
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Kalam&family=M+PLUS+Rounded+1c:wght@300&family=Noto+Sans+Mono:wght@200&family=Raleway:wght@300&display=swap');
+            </style>
+            <h3>Registro</h3>
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="usuario" placeholder="Usuario" name="usuario">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Email" name="email">
+            <label for="pass1">Contraseña:</label>
+            <input type="password" id="pass1" placeholder="Contraseña" name="pass1">
+            <label for="pass2">Repetir contraseña:</label>
+            <input type="password" id="pass2" placeholder="Confirmar contraseña" name="pass2">
+            <input type="button" value="Siguiente" id="regBTN">
+        </form>
+        <div id="insertarCAJA" style="color: red; font-weight: bold;"></div>
+
+    </main>
+    <%- include('partials/footer') %>
+</body>
+
+</html>
