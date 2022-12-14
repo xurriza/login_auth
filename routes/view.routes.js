@@ -11,18 +11,19 @@ router.get("/", (req,res) => {
     res.render("main")
 });
 
-/*router.get("/bicing_register", (req,res) => {
-    if (req.session.idUser){
+router.get("/register", (req,res) => {
+    /*if (req.session.idUser){
         res.redirect("/perfil_usuario");
     }
     else{
         res.render("bicing_register", {
             session: req.session.idUser
         });
-    }
+    }*/
+    res.render("register")
 });
 
-router.get("/bicing_datos_usuario", (req,res) => {
+/*router.get("/bicing_datos_usuario", (req,res) => {
     if (req.session.confirm){
         res.render("bicing_datos_usuario", {
             session: req.session.idUser
@@ -30,15 +31,16 @@ router.get("/bicing_datos_usuario", (req,res) => {
     } else {
         res.redirect("/bicing_register");
     }
-});
+});*/
 
-router.get("/bicing_login", (req,res) => {
-    res.render("bicing_login", {
+router.get("/login", (req,res) => {
+    /*res.render("bicing_login", {
         session: req.session.idUser
-    });
+    });*/
+    res.render("login")
 });
 
-router.get("/bicing_contacto", (req, res) => {
+/*router.get("/bicing_contacto", (req, res) => {
     res.render("bicing_contacto", {
         session: req.session.idUser
     });

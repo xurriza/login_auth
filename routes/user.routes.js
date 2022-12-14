@@ -8,13 +8,13 @@ const emailREGEXP = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 // ruta de registro (signup)
 // Primer formulario de registro
 
-router.post("/bicing_register", (req, res) => {
+router.post("/register", (req, res) => {
     const datos = req.body;
 
     // validacion 
-    if (datos.usuario.length === 0) {
+    /*if (datos.usuario.length === 0) {
         res.json("Campo nombre vacío");
-    } else if (datos.email.length === 0) {
+    }*/ if (datos.email.length === 0) {
         res.json("Campo email vacío");
     } else if (!emailREGEXP.test(datos.email)) {
         res.json("Campo email con formato incorrecto");
@@ -29,14 +29,14 @@ router.post("/bicing_register", (req, res) => {
     } else {
 
         // comprobar que no exista otra cuenta igual (correo y username)
-        const sql_s = 'select username from cuenta where username = ?';
-        conn.query(sql_s, [datos.usuario], (error, results) => {
+        const sql = 'select email from usuario where email = ?';
+        conn.query(sql, [datos.email], (error, results) => {
             if (error) {
                 res.json("Ha ocurrido un error en la base de datos!");
                 throw error;
             }
             if (results.length != 0) {
-                res.json("El nombre de usuario* introducido ya existe!");
+                res.json("El email introducido ya existe!");
             }
             else {
                 const sql_s = 'select email from cuenta where email = ?';

@@ -14,27 +14,29 @@
     <!-- para que sea correcta la visualizacion en Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- titulo de la pag web  -->
-    <title>Inicio</title>
+    <title>inicio sesion</title>
     <!-- link a css  -->
 
+    <!-- <script type="module" src="js/bicing_register.js"></script> -->
 </head>
 
 <body>
     <!-- CABECERA -->
     <!-- dentro de la etiqueta body, añadimos los elementos visuales de nuestra pag web -->
-
     <main>
+        <form class="register">
 
+            <h3>iniciar sesion</h3>
+            <!-- <label for="username">Nombre de usuario:</label>
+            <input type="text" id="usuario" placeholder="Usuario" name="usuario"> -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Email" name="email">
+            <label for="pass1">Contraseña:</label>
+            <input type="password" id="pass1" placeholder="Contraseña" name="pass1">
+            <input type="button" value="iniciar sesion" id="regBTN">
+        </form>
+        <!-- <div id="insertarCAJA" style="color: red; font-weight: bold;"></div> -->
 
-                <div>
-                    <a id="login" href="/login"><input id="login" type="button" value="iniciar sesion"></a>
-                </div>
-
-                <div>
-                    <a id="register" href="/register"><input id="register" type="button" value="registrarse"></a>
-                </div>
-
-        </div>
     </main>
 
 </body>
